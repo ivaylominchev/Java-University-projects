@@ -75,7 +75,21 @@ public class Primer2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        double a,b;
+        try {
+            a = Double.parseDouble(jTextField1.getText());
+            b = Double.parseDouble(jTextField2.getText());
+            if (b >= 0.0000001 && b<=0.0000001) {
+                if (a%b == 0) {
+                    JOptionPane.showMessageDialog(this, "Делят се без остатък", "Резултат", 1);
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Делят се с остатък", "Резултат", 0 );
+                }
+            }
+        } catch (Exception e) {
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
