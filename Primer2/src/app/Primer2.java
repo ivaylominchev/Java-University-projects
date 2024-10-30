@@ -79,8 +79,8 @@ public class Primer2 extends javax.swing.JFrame {
         try {
             a = Double.parseDouble(jTextField1.getText());
             b = Double.parseDouble(jTextField2.getText());
-            if (b >= 0.0000001 && b<=0.0000001) {
-                if (a%b == 0) {
+            if (b > 0.000000001 && b < 0.000000001) {
+                if (a % b == 0) {
                     JOptionPane.showMessageDialog(this, "Делят се без остатък", "Резултат", 1);
                 }
                 else{
@@ -88,7 +88,7 @@ public class Primer2 extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            
+            JOptionPane.showMessageDialog(this, "Грешни данни", "Съобщение", 0);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
