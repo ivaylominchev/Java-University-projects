@@ -45,6 +45,11 @@ public class Primer3 extends javax.swing.JFrame {
         });
 
         jButton2.setText("Задача2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,6 +120,31 @@ public class Primer3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Грешни данни!", "Внимание",0);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String s1 = jTextField1.getText();
+        String s2 = jTextField2.getText();
+        if (s1.length() > s2.length()) {
+            if (s1.contains(s2)) {
+                JOptionPane.showMessageDialog(this, s2 + " се съдържа в " + s1, "Резултат", 1);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, s2 + " НЕ се съдържа в " + s1, "Резултат", 1);
+            }
+        }
+        else if (s1.length() < s2.length()) {
+            if (s2.contains(s1)) {
+                JOptionPane.showMessageDialog(this, s1 + " се съдържа в " + s2, "Резултат", 1);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, s1 + " НЕ се съдържа в " + s2, "Резултат", 1);
+            }
+        }
+        else if (s1.length() == s2.length()) {
+            JOptionPane.showMessageDialog(this,"Думите са равни по дължина", "Резултат", 1);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
