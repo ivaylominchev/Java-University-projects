@@ -9,11 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 public class Primer3 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Primer3
-     */
+    DefaultListModel<String> model;
     public Primer3() {
         initComponents();
+        model = new DefaultListModel<>();
+        jList1.setModel(model);
     }
 
     /**
@@ -172,7 +172,8 @@ public class Primer3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        String text = jTextField1.getText();
+        model.addElement(text);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
