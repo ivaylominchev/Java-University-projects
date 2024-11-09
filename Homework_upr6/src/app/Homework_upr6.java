@@ -67,6 +67,11 @@ public class Homework_upr6 extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Търси");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -105,6 +110,27 @@ public class Homework_upr6 extends javax.swing.JFrame {
             table.addRow(new Object[]{jUserField.getText(),jSubjectField.getText()});
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        String search = JOptionPane.showInputDialog(this, "Въведи име:", "Търси по име", 1);
+        boolean check = false;
+        String subjects="";
+        for (int i = 0; i < table.getRowCount(); i++) {
+            if (search.equals(table.getValueAt(i, 0))) {
+                check = true;
+                subjects += table.getValueAt(i, 1).toString() + ", ";
+            }
+        }
+        
+        if ( check == true) {
+            JOptionPane.showMessageDialog(this, "Преподавател " + search + " води по " + subjects.replaceAll(", $", ""));
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Няма информация за преподавател " + search);
+
+        }
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
