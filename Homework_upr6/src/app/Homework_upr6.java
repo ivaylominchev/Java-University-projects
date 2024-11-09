@@ -134,7 +134,7 @@ public class Homework_upr6 extends javax.swing.JFrame {
         if ( check == true) {
             JOptionPane.showMessageDialog(this, "Преподавател " + search + " води по " + subjects.replaceAll(", $", ""));
         }
-        else{
+        else if (check == false){
             JOptionPane.showMessageDialog(this, "Няма информация за преподавател " + search);
 
         }
