@@ -167,8 +167,8 @@ public class Homework_upr6 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_DELETE){
-            table.removeRow(jTable1.getSelectedRow());
+        if (evt.getKeyCode() == KeyEvent.VK_ESCAPE){
+            this.dispose();
         }
     }//GEN-LAST:event_jTable1KeyPressed
 
