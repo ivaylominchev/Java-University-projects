@@ -38,6 +38,11 @@ public class Homework_upr6 extends javax.swing.JFrame {
                 "Преподавател", "Предмет"
             }
         ));
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTable1KeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -160,6 +165,12 @@ public class Homework_upr6 extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_DELETE){
+            table.removeRow(jTable1.getSelectedRow());
+        }
+    }//GEN-LAST:event_jTable1KeyPressed
 
     /**
      * @param args the command line arguments
