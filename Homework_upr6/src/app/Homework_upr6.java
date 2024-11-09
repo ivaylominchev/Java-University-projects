@@ -6,9 +6,11 @@ import java.awt.event.*;
 
 public class Homework_upr6 extends javax.swing.JFrame {
 
+    DefaultTableModel table;
     
     public Homework_upr6() {
         initComponents();
+        table = (DefaultTableModel)jTable1.getModel();
     }
 
     
@@ -56,10 +58,15 @@ public class Homework_upr6 extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("Добавяне");
+        jMenuItem1.setText("Добави");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Търсене");
+        jMenuItem2.setText("Търси");
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -82,6 +89,22 @@ public class Homework_upr6 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        JTextField jUserField = new JTextField();
+        JTextField jSubjectField = new JTextField();
+        
+        Object[] oaContent = {
+                "Преподавател:", jUserField,
+                "Предмет:", jSubjectField,
+        };
+        
+        int option = JOptionPane.showConfirmDialog(this, oaContent, "Преподавател и предмет",JOptionPane.OK_CANCEL_OPTION,1);
+        if (option == JOptionPane.OK_OPTION) {
+            
+            table.addRow(new Object[]{jUserField.getText(),jSubjectField.getText()});
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
